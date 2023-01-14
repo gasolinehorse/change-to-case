@@ -46,9 +46,9 @@
               <p>1. Paste your text below or <span id="lorem-opener" onclick="loremOpener()">generate placeholder&nbsp;text:</span></p>
               <div id="lorem-options" class="px-3 py-2 justify-content-between align-items-center">
                 <label for="words"><span class="d-none d-lg-inline-block">How Many</span> Words: </label>
-                <input type="number" id="words" min="1" max="9999" value="10" class="me-2">
+                <input type="number" id="words" min="1" max="9999" value="10" class="me-2" onkeyup=enforceMinMax(this)>
                 <label for="paragraphs"><span class="d-none d-lg-inline-block">How Many</span> Paragraphs: </label>
-                <input type="number" id="paragraphs" min="1" max="500" value="1" class="me-2">
+                <input type="number" id="paragraphs" min="1" max="500" value="1" class="me-2" onkeyup=enforceMinMax(this)>
                 <button id="lorem-options__gen" onclick="generateText()">Generate</button>
               </div>
               <textarea name="input" id="input" autofocus placeholder="Magic begins here..."></textarea>
@@ -334,6 +334,18 @@
     }
 
     document.getElementById("input").value = inputLorem;
+  }
+
+  /* Cap max number for lorem gen */
+  function enforceMinMax(el) {
+    if (el.value != "") {
+      if (parseInt(el.value) < parseInt(el.min)) {
+        el.value = el.min;
+      }
+      if (parseInt(el.value) > parseInt(el.max)) {
+        el.value = el.max;
+      }
+    }
   }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
