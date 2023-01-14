@@ -238,7 +238,7 @@
   'use strict'
   var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|v.?|vs.?|via)$/i
   var alphanumericPattern = /([A-Za-z0-9\u00C0-\u00FF])/
-  var wordSeparators = /([ :–—-])/
+  var wordSeparators = /([ :–—])/
 
   return this.split(wordSeparators)
     .map(function (current, index, array) {
@@ -256,10 +256,6 @@
           (array[index - 1] === '-' && array[index + 1] === '-'))
       ) {
         return current.toLowerCase()
-      }
-      /*WIP*/
-      if (current.search("-") > -1) {
-        alert("I found a bug with hyphen in title case. Stay tuned for a fix! - Allen 01/12/2023")
       }
       /* Ignore intentional capitalization */
       if (current.substr(1).search(/[A-Z]|\../) > -1) {
