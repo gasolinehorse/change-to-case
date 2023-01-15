@@ -384,6 +384,11 @@ body.dark {
   border-left: 5px dashed black;
   border-right: 5px dashed black;
 }
+@media (max-width: 575.98px) {
+  #lorem-options {
+    flex-flow: column nowrap;
+  }
+}
 label {
   font-size: 0.9rem;
 }
