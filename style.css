@@ -161,7 +161,7 @@ a:hover {
 .btn {
   display: block;
   color: #000000;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: bold;
   border: 5px solid black;
   border-radius: 0;
@@ -200,7 +200,7 @@ a:hover {
 button {
   background-color: transparent;
   color: #000000;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: bold;
   border-top: 0;
   border-left: 0;
