@@ -375,7 +375,13 @@ body.dark {
 }
 #lorem-opener {
   cursor: pointer;
-  text-decoration: underline;
+  background-color: #eee;
+  padding: 0.2em 0.5em;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+#lorem-opener:hover {
+  background-color: #ddd;
 }
 #lorem-options {
   display: none;
@@ -388,6 +394,10 @@ body.dark {
   #lorem-options {
     flex-flow: column nowrap;
   }
+}
+#lorem-switch {
+  transition: transform 0.2s ease;
+  transform-origin: center;
 }
 label {
   font-size: 0.9rem;
