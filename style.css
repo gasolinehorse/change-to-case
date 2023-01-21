@@ -129,6 +129,9 @@ p.small {
     font-size: 0.8rem;
   }
 }
+.step {
+  font-weight: 600;
+}
 textarea {
   width: 100%;
   min-height: 50vh;
