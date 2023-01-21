@@ -30,99 +30,103 @@
 <body class="global">
 <div class="loader"></div>
 <div class="switching"></div>
-<main class="container position-relative">
-  <div id="lang" class="position-absolute"><p class="small text-grey text-end"><a class="px-2 px-md-1 fw-bold" href="mailto:allen@gasolinehorses.com" target="_blank">Request Features</a></p></div>
-  <div class="row">
-    <div class="col ml-sm-auto px-4">
-      <div class="py-5">
-        <header>
-          <h1 class="mb-1 position-relative d-inline-block w-100 noselect"><span class="word">Change to Title Case</span> <span class="word">CHANGE TO UPPERCASE</span> <span class="word">Change to sentence case</span> <span class="word">ChAnGe tO AlTeRnAtInG cApS</span> <span class="word">Change To Capitalized Case</span> <span class="word">change to lowercase</span></h1>
-          <h2 class="noselect">Easily change text to uppercase, lowercase, title case, sentence case, and capitalized&nbsp;case.</h2>
-        </header>
-        <section>
-          <hr>
-          <div class="row">
-            <div class="col-md-7 col-lg-8">
-              <p class="noselect">1. Paste text below or <span id="lorem-opener" class="ms-1 py-0 my-0" onclick="loremOpener()">generate placeholder&nbsp;text <img id="lorem-switch" src="lorem-ipsum-switch.svg" alt="open lorem ipsum generator"><img id="lorem-switch-reversed" src="lorem-ipsum-switch-reversed.svg" alt="open lorem ipsum generator"></span></p>
-              <div id="lorem-options" class="px-3 py-2 justify-content-between align-items-center">
-                <label for="words"><span class="d-inline-block d-sm-none d-lg-inline-block">How Many</span> Words: </label>
-                <input type="number" id="words" min="1" max="9999" value="10" class="me-2" onkeyup=enforceMinMax(this)>
-                <label for="paragraphs"><span class="d-inline-block d-sm-none d-lg-inline-block">How Many</span> Paragraphs: </label>
-                <input type="number" id="paragraphs" min="1" max="500" value="1" class="me-2" onkeyup=enforceMinMax(this)>
-                <button id="lorem-options__gen" onclick="generateText()">Generate</button>
-              </div>
-              <textarea name="input" id="input" autofocus placeholder="Magic begins here..."></textarea>
-              <p id="word-counter" class="small text-grey noselect"><span id="word-count">0</span> words / <span id="charac-count">0</span> characters <span id="refresh-word-counter"></span></p>
-              <div class="row pt-2">
-                <div class="col">
-                  <button type="button" class="mb-5" onclick="copy();">Copy Text</button>
+<main>
+  <div class="container position-relative">
+    <div id="lang" class="position-absolute"><p class="small text-grey text-end"><a class="px-2 px-md-1 fw-bold" href="mailto:allen@gasolinehorses.com" target="_blank">Request Features</a></p></div>
+    <div class="row">
+      <div class="col ml-sm-auto px-4">
+        <div class="py-5">
+          <header>
+            <h1 class="mb-1 position-relative d-inline-block w-100 noselect"><span class="word">Change to Title Case</span> <span class="word">CHANGE TO UPPERCASE</span> <span class="word">Change to sentence case</span> <span class="word">ChAnGe tO AlTeRnAtInG cApS</span> <span class="word">Change To Capitalized Case</span> <span class="word">change to lowercase</span></h1>
+            <h2 class="noselect">Easily change text to uppercase, lowercase, title case, sentence case, and capitalized&nbsp;case.</h2>
+          </header>
+          <section>
+            <hr>
+            <div class="row">
+              <div class="col-md-7 col-lg-8">
+                <p class="noselect">1. Paste text below or <span id="lorem-opener" class="ms-1 py-0 my-0" onclick="loremOpener()">generate placeholder&nbsp;text <img id="lorem-switch" src="lorem-ipsum-switch.svg" alt="open lorem ipsum generator"><img id="lorem-switch-reversed" src="lorem-ipsum-switch-reversed.svg" alt="open lorem ipsum generator"></span></p>
+                <div id="lorem-options" class="px-3 py-2 justify-content-between align-items-center">
+                  <label for="words"><span class="d-inline-block d-sm-none d-lg-inline-block">How Many</span> Words: </label>
+                  <input type="number" id="words" min="1" max="9999" value="10" class="me-2" onkeyup=enforceMinMax(this)>
+                  <label for="paragraphs"><span class="d-inline-block d-sm-none d-lg-inline-block">How Many</span> Paragraphs: </label>
+                  <input type="number" id="paragraphs" min="1" max="500" value="1" class="me-2" onkeyup=enforceMinMax(this)>
+                  <button id="lorem-options__gen" onclick="generateText()">Generate</button>
                 </div>
-                <div class="col">
-                  <div class="venmo text-end">
-                    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy Me a Bubble Tea', '#61ba00', 'C0C3GC2QV');kofiwidget2.draw();</script> 
+                <textarea name="input" id="input" autofocus placeholder="Magic begins here..."></textarea>
+                <p id="word-counter" class="small text-grey noselect"><span id="word-count">0</span> words / <span id="charac-count">0</span> characters <span id="refresh-word-counter"></span></p>
+                <div class="row pt-2">
+                  <div class="col">
+                    <button type="button" class="mb-5" onclick="copy();">Copy Text</button>
+                  </div>
+                  <div class="col">
+                    <div class="venmo text-end">
+                      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy Me a Bubble Tea', '#61ba00', 'C0C3GC2QV');kofiwidget2.draw();</script> 
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="col-md-5 col-lg-4 btns-wrapper">
+                <p class="mb-3 pb-lg-0 noselect">2. Select what case to&nbsp;change</p>
+                <div class="position-relative">
+                  <h3 id="btn--uppercase" class="btn mb-3" onmouseover="convertU();">to Uppercase <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div class="position-relative">
+                  <h3 id="btn--lowercase" class="btn mb-3" onmouseover="convertL();">to Lowercase <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., the quick brown fox jumps over the lazy dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div class="position-relative">
+                  <h3 id="btn--title" class="btn mb-3" onmouseover="convertT();">to Title Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The Quick Brown Fox Jumps Over the Lazy Dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div class="position-relative">
+                  <h3 id="btn--capitalized" class="btn mb-3" onmouseover="convertC();">to Capitalized Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The Quick Brown Fox Jumps Over The Lazy Dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div class="position-relative">
+                  <h3 id="btn--sentence" class="btn mb-3" onmouseover="convertS();">to Sentence Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The quick brown fox jumps over the lazy dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div class="position-relative">
+                  <h3 id="btn--alt" class="btn mb-2" onmouseover="convertA();">to Alternating Caps <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., ThE QuIcK BrOwN FoX JuMpS OvEr tHe lAzY DoG" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
+                  <div class="shadow-box noselect"></div>
+                </div>
+                <div onclick="noDouble();" style="cursor: pointer;"><p class="small mt-3 mb-1 noselect"><u>Remove double spaces</u></p><a class="small noselect" href="#change-to-case-guide"><u>How do I know which case to&nbsp;use?</u></a></div>
+              </div>
             </div>
-            <div class="col-md-5 col-lg-4 btns-wrapper">
-              <p class="mb-3 pb-lg-0 noselect">2. Select what case to&nbsp;change</p>
-              <div class="position-relative">
-                <h3 id="btn--uppercase" class="btn mb-3" onmouseover="convertU();">to Uppercase <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div class="position-relative">
-                <h3 id="btn--lowercase" class="btn mb-3" onmouseover="convertL();">to Lowercase <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., the quick brown fox jumps over the lazy dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div class="position-relative">
-                <h3 id="btn--title" class="btn mb-3" onmouseover="convertT();">to Title Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The Quick Brown Fox Jumps Over the Lazy Dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div class="position-relative">
-                <h3 id="btn--capitalized" class="btn mb-3" onmouseover="convertC();">to Capitalized Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The Quick Brown Fox Jumps Over The Lazy Dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div class="position-relative">
-                <h3 id="btn--sentence" class="btn mb-3" onmouseover="convertS();">to Sentence Case <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., The quick brown fox jumps over the lazy dog" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div class="position-relative">
-                <h3 id="btn--alt" class="btn mb-2" onmouseover="convertA();">to Alternating Caps <span class="opacity-25 info d-none d-md-inline-block" data-toggle="tooltip" data-placement="top" title="E.g., ThE QuIcK BrOwN FoX JuMpS OvEr tHe lAzY DoG" ><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none"><g clip-path="url(#a)"><path fill="#000" d="M6.176.206a5.971 5.971 0 1 0 .001 11.942 5.971 5.971 0 0 0 0-11.942Zm0 9.08a.622.622 0 1 1 0-1.244.622.622 0 0 1 0 1.244Zm.976-2.95c-.45.486-.471.754-.465 1.084h-.998c-.003-.733.01-1.057.712-1.725.285-.27.51-.485.479-.906-.029-.4-.363-.61-.68-.61-.352 0-.764.262-.764 1.001h-1c0-1.194.7-1.965 1.786-1.965.515 0 .966.169 1.269.475.283.288.43.683.424 1.144-.007.688-.426 1.14-.763 1.503Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M.205.206h11.942v11.942H.205z"/></clipPath></defs></svg></span></h3>
-                <div class="shadow-box noselect"></div>
-              </div>
-              <div onclick="noDouble();" style="cursor: pointer;"><p class="small mt-3 mb-1 noselect"><u>Remove double spaces</u></p><a class="small noselect" href="#change-to-case-guide"><u>How do I know which case to&nbsp;use?</u></a></div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
-  <article class="row pb-5" id="change-to-case-guide">
-	  <h5>When to Use Which Letter&nbsp;Case?</h5>
-	  <h4 class="mt-3">What Is Uppercase and When to Use&nbsp;It?</h4>
-	  <h6><span class="ex">Example</span> CHANGE TEXT TO UPPERCASE TO ADD EMPHASIS</h6>
-	  <p class="small">Also known as "all caps". Uppercase refers to text written solely in the capital letters of the alphabet, as opposed to lowercase&nbsp;letters. </p>
-	  <p class="small">Because Uppercase letters are typically larger and more visually prominent than lowercase letters, uppercase can be used as headlines or titles, sometimes for aesthetic purposes. It is important to use uppercase appropriately in order to communicate effectively as it is also commonly used as typographical emphasis or used to indicate words spoken by someone who is shouting which can be considered as poor etiquette, especially in personal settings. Uppercase reduces readability in most cases, especially when applied to longer words and sentences or when text is not large as each letter would share the same x-height making letters hard to be distinguished. However, the visual distinction of uppercase also allows it to stand out, even without any design treatment. In online chats or SMS, uppercase is sometimes used accidentally when the cap lock key or shift key is&nbsp;on. </p>
-		<h4 class="mt-3">What Is Lowercase and When to Use&nbsp;It?</h4>
-		<h6><span class="ex">Example</span> change text to lowercase for aesthetic purposes</h6>
-		<p class="small">Lowercase, in this case, describes text written in solely lowercase&nbsp;letters. </p>
-		<p class="small">It is not a common typography treatment but occasionally used for aesthetic or artistic purposes (in poetry, for example). Another application is to use it in desktop instant messaging as it does not require any additional typings on the Shift key to capitalize any letters. Additionally, lowercase is often favored in programming languages to avoid coding errors. A developer may use lowercase words or acronyms, sometimes connected by dashes or underscores, as variables, file names, or class/ID names in various programming&nbsp;languages.</p>
-		<h4 class="mt-3">What Is Title Case and When to Use&nbsp;It?</h4>
-		<h6><span class="ex">Example</span> Change Text to Title Case for a Nice Headline</h6>
-		<p class="small">Also known as "headline style" and "capital case". Title case describes text that features capitalized words with the exception of particular minor words such as "a", "the", "and", and "of". However, there are different definitions when it comes to which words are considered major between different writers and organizations, especially when it comes to whether or not to capitalize certain articles, prepositions, and words in hyphenated compounds. The word "over" is, for example, sometimes capitalized and sometimes&nbsp;not. </p>
-		<p class="small">While not universally standardized, it is often the letter case chosen for headlines and titles, and is also often applied to subheadings, quotes, call-outs, and web buttons. It offers good readability thanks to the various x-heights used in this letter case, and, by not capitalizing the subsets mentioned above, title case allows the readers to leverage such visual hints to distinguish important words and phrases in the title or&nbsp;heading.</p>
-	  <h4 class="mt-3">What Is Capitalized Case and When to Use&nbsp;It?</h4>
-	  <h6><span class="ex">Example</span> Change Text To Capitalized Case To Make A Developer Happy</h6>
-	  <p class="small">Also known as "start case". It describes text that features capitalized words. Unlike title case, capitalized case capitalizes all words including all minor words such as "a", "the", "and", and&nbsp;"of".</p>
-		<p class="small">Often used as headlines and titles, capitalized case is a simplified variant of title case. Capitalizing every word provides a standardized rule that is easy to follow. It is also natively supported in the CSS programming language making it easy to implement&nbsp;digitally.</p>
-	  <h4 class="mt-3">What Is Sentence Case and When to Use&nbsp;It?</h4>
-	  <h6><span class="ex">Example</span> Change text to sentence case for your everyday writing</h6>
-	  <p class="small">Also known as "initial capitalization" or "normal case". Sentence case refers to a style of capitalization in which only the first letter of the first word in a sentence is&nbsp;capitalized. </p>
-		<p class="small">Sentence case is considered the baseline universal standard for content that is not a title or headline. However, in recent years, it appears that a design trend of using sentence case on not only the body copy, but also the headlines, titles, web buttons has&nbsp;emerged. </p>
-	  <h4 class="mt-3">What Is Alternating Caps and When to Use&nbsp;It?</h4>
-	  <h6><span class="ex">Example</span> ChAnGe tExT To aLtErNaTiNg cApS FoR A NiCe lOgO</h6>
-	  <p class="small">Also called "alternating case", "studly caps", "sticky caps", and "mixed case". It describes text that contains a mix of random or patterned uppercase letters and lowercase letters, sometimes with unexpected spaces between words or letters as well. While it comes with a unique mockery style in text, alternating caps requires additional effort to read which decreases&nbsp;legibility. </p>
-	  <p class="small">Alternating caps is sometimes used for emphasis as it stands out from the remaining text. It is also often used for aesthetic reasons in logo design or brand names. For example, 7-11's logo contains the word "eleven" written in alternating caps.</p>
+  <article class="py-5 px-3" id="change-to-case-guide">
+    <div style="max-width: 780px; margin: 0 auto;">
+  	  <h5 class="pb-3">When to Use Which Letter&nbsp;Case?</h5>
+  	  <h4 class="mt-3">What Is Uppercase and When to Use&nbsp;It?</h4>
+  	  <h6><span class="ex">Example</span> CHANGE TEXT TO UPPERCASE TO ADD EMPHASIS</h6>
+  	  <p class="small">Also known as "all caps". Uppercase refers to text written solely in the capital letters of the alphabet, as opposed to lowercase&nbsp;letters. </p>
+  	  <p class="small">Because Uppercase letters are typically larger and more visually prominent than lowercase letters, uppercase can be used as headlines or titles, sometimes for aesthetic purposes. It is important to use uppercase appropriately in order to communicate effectively as it is also commonly used as typographical emphasis or used to indicate words spoken by someone who is shouting which can be considered as poor etiquette, especially in personal settings. Uppercase reduces readability in most cases, especially when applied to longer words and sentences or when text is not large as each letter would share the same x-height making letters hard to be distinguished. However, the visual distinction of uppercase also allows it to stand out, even without any design treatment. In online chats or SMS, uppercase is sometimes used accidentally when the cap lock key or shift key is&nbsp;on. </p>
+  		<h4 class="mt-3">What Is Lowercase and When to Use&nbsp;It?</h4>
+  		<h6><span class="ex">Example</span> change text to lowercase for aesthetic purposes</h6>
+  		<p class="small">Lowercase, in this case, describes text written in solely lowercase&nbsp;letters. </p>
+  		<p class="small">It is not a common typography treatment but occasionally used for aesthetic or artistic purposes (in poetry, for example). Another application is to use it in desktop instant messaging as it does not require any additional typings on the Shift key to capitalize any letters. Additionally, lowercase is often favored in programming languages to avoid coding errors. A developer may use lowercase words or acronyms, sometimes connected by dashes or underscores, as variables, file names, or class/ID names in various programming&nbsp;languages.</p>
+  		<h4 class="mt-3">What Is Title Case and When to Use&nbsp;It?</h4>
+  		<h6><span class="ex">Example</span> Change Text to Title Case for a Nice Headline</h6>
+  		<p class="small">Also known as "headline style" and "capital case". Title case describes text that features capitalized words with the exception of particular minor words such as "a", "the", "and", and "of". However, there are different definitions when it comes to which words are considered major between different writers and organizations, especially when it comes to whether or not to capitalize certain articles, prepositions, and words in hyphenated compounds. The word "over" is, for example, sometimes capitalized and sometimes&nbsp;not. </p>
+  		<p class="small">While not universally standardized, it is often the letter case chosen for headlines and titles, and is also often applied to subheadings, quotes, call-outs, and web buttons. It offers good readability thanks to the various x-heights used in this letter case, and, by not capitalizing the subsets mentioned above, title case allows the readers to leverage such visual hints to distinguish important words and phrases in the title or&nbsp;heading.</p>
+  	  <h4 class="mt-3">What Is Capitalized Case and When to Use&nbsp;It?</h4>
+  	  <h6><span class="ex">Example</span> Change Text To Capitalized Case To Make A Developer Happy</h6>
+  	  <p class="small">Also known as "start case". It describes text that features capitalized words. Unlike title case, capitalized case capitalizes all words including all minor words such as "a", "the", "and", and&nbsp;"of".</p>
+  		<p class="small">Often used as headlines and titles, capitalized case is a simplified variant of title case. Capitalizing every word provides a standardized rule that is easy to follow. It is also natively supported in the CSS programming language making it easy to implement&nbsp;digitally.</p>
+  	  <h4 class="mt-3">What Is Sentence Case and When to Use&nbsp;It?</h4>
+  	  <h6><span class="ex">Example</span> Change text to sentence case for your everyday writing</h6>
+  	  <p class="small">Also known as "initial capitalization" or "normal case". Sentence case refers to a style of capitalization in which only the first letter of the first word in a sentence is&nbsp;capitalized. </p>
+  		<p class="small">Sentence case is considered the baseline universal standard for content that is not a title or headline. However, in recent years, it appears that a design trend of using sentence case on not only the body copy, but also the headlines, titles, web buttons has&nbsp;emerged. </p>
+  	  <h4 class="mt-3">What Is Alternating Caps and When to Use&nbsp;It?</h4>
+  	  <h6><span class="ex">Example</span> ChAnGe tExT To aLtErNaTiNg cApS FoR A NiCe lOgO</h6>
+  	  <p class="small">Also called "alternating case", "studly caps", "sticky caps", and "mixed case". It describes text that contains a mix of random or patterned uppercase letters and lowercase letters, sometimes with unexpected spaces between words or letters as well. While it comes with a unique mockery style in text, alternating caps requires additional effort to read which decreases&nbsp;legibility. </p>
+  	  <p class="small">Alternating caps is sometimes used for emphasis as it stands out from the remaining text. It is also often used for aesthetic reasons in logo design or brand names. For example, 7-11's logo contains the word "eleven" written in alternating caps.</p>
+    </div>
   </article>
   <div id="switch-wrapper" data-toggle="tooltip" data-placement="left" title="Switch theme">
     ◉

@@ -146,6 +146,7 @@ textarea {
 @media (max-width: 767px) {
 	textarea {
 		min-height: 150px;
+    font-size: 0.875rem;
 	}
 }
 textarea:focus {
@@ -313,8 +314,7 @@ hr {
   animation-delay: 4s; 
 }
 #change-to-case-guide {
-	max-width: 780px;
-  margin: 0 auto;
+  background-color: #f9f9f9;
 }
 body.dark {
 	color: #eaeaea;
@@ -359,6 +359,9 @@ body.dark {
 }
 .dark #lorem-switch {
   display: none;
+}
+.dark #change-to-case-guide {
+  background-color: #252525;
 }
 #lang {
 	right: 15px;
