@@ -360,12 +360,12 @@
     }
 
     document.getElementById("input").value = inputLorem;
-      document.getElementById("refresh-word-counter").innerHTML = "(Type to refresh)";
-    }
+    document.getElementById("refresh-word-counter").innerHTML = "(Type to refresh)";
+  }
 
-    document.getElementById("input").onkeypress = function() {
-      document.getElementById("refresh-word-counter").innerHTML = "";
-    }
+  document.getElementById("input").onkeypress = function() {
+    document.getElementById("refresh-word-counter").innerHTML = "";
+  }
 
   /* Cap max number for lorem gen */
   function enforceMinMax(el) {
